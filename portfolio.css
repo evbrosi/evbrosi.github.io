@@ -1,0 +1,110 @@
+/* entire container, keeps perspective */
+.flip-container {
+    perspective: 400px;
+}
+    /* flip the pane when hovered */
+    .flip-container:hover .flipper, .flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: 320px;
+    height: 325px;
+}
+
+.pig-pen {
+    width: 960px;
+    float: center;
+}
+
+.container-fluid {
+    font-family: Roboto, "Trebuchet MS", Arial, sans-serif;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+    float: center;
+}
+
+/* flip speed goes here */
+.flipper {
+    transition: 0.8s;
+    transform-style: preserve-3d;
+    height: 325px;
+    width: 320px;
+
+    position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+    transform: rotateY(180deg);
+    padding: 10px;
+}
+
+.card {
+    padding: 10px;
+    height: 320px;
+    border: 0 none;
+    border-block-end-color: #0099cc;
+}
+
+.show-card {
+    padding: 10px;
+    height: 316px;
+    width: 320px;
+}
+
+.card span {
+    font-size: 24px;
+    color: white;
+}
+
+.card-block {
+    background-color: yellow;
+}
+
+.btn{
+    float: right;
+    color: black;
+    border: 2px solid black;
+}
+
+.btn-ruby:hover {
+    background-color: #79CDCD;
+}
+
+.btn-js:hover {
+    background-color: #ffdd00;
+}
+
+.btn-pink:hover {
+    background-color: #ff6500;
+}
+
+.javascript_projects{
+    background-color: #79CDCD;
+}
+
+.art_projects {
+    background-color: #ccffcc;
+}
+
+.writing_projects {
+  background-color: #f4c20d;
+}
