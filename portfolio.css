@@ -9,7 +9,7 @@
 
 .flip-container, .front, .back {
     width: 320px;
-    height: 325px;
+    height: 320px;
 }
 
 .pig-pen {
@@ -17,7 +17,7 @@
     float: center;
 }
 
-.container-fluid {
+.row {
     font-family: Roboto, "Trebuchet MS", Arial, sans-serif;
     display: block;
     margin: 0 auto;
@@ -55,28 +55,6 @@
 .back {
     transform: rotateY(180deg);
     padding: 10px;
-}
-
-.card {
-    padding: 10px;
-    height: 320px;
-    border: 0 none;
-    border-block-end-color: #0099cc;
-}
-
-.show-card {
-    padding: 10px;
-    height: 316px;
-    width: 320px;
-}
-
-.card span {
-    font-size: 24px;
-    color: white;
-}
-
-.card-block {
-    background-color: yellow;
 }
 
 .btn{
