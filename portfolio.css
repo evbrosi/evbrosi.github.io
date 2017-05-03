@@ -13,8 +13,12 @@
 }
 
 .pig-pen {
-    width: 960px;
+    width: 100%;
     float: center;
+}
+
+.width-set {
+    width: 100%;
 }
 
 .row {
@@ -22,8 +26,12 @@
     display: block;
     margin: 0 auto;
     position: relative;
+    height: 100%;
+}
+
+.width-set {
     width: 960px;
-    float: center;
+    margin: auto;
 }
 
 /* flip speed goes here */
@@ -75,14 +83,7 @@
     background-color: #ff6500;
 }
 
-.javascript_projects{
-    background-color: #79CDCD;
-}
-
-.art_projects {
-    background-color: #ccffcc;
-}
-
-.writing_projects {
-  background-color: #f4c20d;
+.show-card {
+    height: 100%;
+    padding-bottom: 45px;
 }

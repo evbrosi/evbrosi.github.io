@@ -21,15 +21,12 @@ $(function () {
         $("#printOutPartyTip").html(tipAmount.toFixed(2));
         $("#totalBill").html(totalBill.toFixed(2));
 
-
         console.log(individualBill)
         if(partyCount > 1){
                 $(".card").css("height", "450px");
         }else {
-
         }
         });
-
     });
 
 $("#removal").click(function() {
