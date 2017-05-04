@@ -1,0 +1,41 @@
+.currencyinput {
+    border: 1px inset #ccc;
+}
+.currencyinput input {
+    border: 0;
+}
+
+.billFun {
+    color: black;
+    font-size: 17px;
+}
+
+
+.card {
+    background-color: #ff6600;
+    padding: 10px 24px;
+    height: 330px;
+    width: 300px;
+    border: 0 none;
+    color: white;
+    border-radius: 30px;
+    margin: 15px;
+    border-block-end-color: #0099cc;
+}
+
+.card span {
+    font-size: 24px;
+    color: white;
+}
+
+.card-bg {
+    background-size: cover;
+}
+
+.btn {
+    float: right;
+}
+
+#groupParty {
+    color: white;
+}
