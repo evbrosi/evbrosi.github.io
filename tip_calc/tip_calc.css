@@ -7,6 +7,22 @@
     color:white;
 }
 
+#printOutTip {
+    color: white;
+}
+
+#printItOut {
+    color: white;
+}
+
+#printOutPartyTip {
+    color: white;
+}
+
+#totalBill {
+    color: white;
+}
+
 .billFun {
     color: white;
     font-size: 17px;
@@ -23,6 +39,10 @@ input[type="number"] {
     border-color: #ff6600;
 }
 
+input::placeholder {
+    color: white;
+}
+
 select{
     background: #ff6600;
     border: none;
@@ -31,7 +51,7 @@ select{
 .card {
     background-color: #ff6600;
     padding: 10px 24px;
-    height: 330px;
+    height: 320px;
     width: 280px;
     border: 0 none;
     color: white;

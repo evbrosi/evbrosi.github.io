@@ -26,7 +26,7 @@ $(function () {
 
         console.log(individualBill)
         if(partyCount > 1){
-            $(".card").css("height", "450px");
+            $(".card").css("height", "430px");
         }else {
             $(".group-party").css("color", "#000000")
         }

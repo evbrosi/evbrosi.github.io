@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Tip Calculator</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,59 +12,49 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card card-block">
-                    <h2 class="card-title">
-                        <h3 class="card-title">
-                            Tip Calculator
-                        </h3>
-                        <form class="billFun">
-                            $
-                            <input type="text" id="billAmount" placeholder=1 min=1 maxlength=6 /></p>
-                            <hr/>
-                            <p>
-                                Tip
-                                <select id="tipChoice">
-                            <option value=5>5%</option>
-                            <option value=10>10%</option>
-                            <option value=15>15%</option>
-                            <option value=20>20%</option>
-                            <option value=25>30%</option>
-                            </select>
-                                <h13> # in party? </h13>
-                                <input type="number" id="partyCount" value=1 max=20 min=1 /></p>
-                            <hr/>
-                            <p>
-                                Your Tip $
-                                <a id="printOutTip"></a>
-                                <button type="button" class="btn btn-success" id="tipHit">Let's Tip!</button>
-                            </p>
-                            <hr/>
-                            <p>
-                                You Owe $
-                                <a id="printItOut"></a>
-                                <button type="button" class="btn btn-info" id="removal">New bill?</button>
-                                <br/>
-                                <br/>
-                                <div id="groupParty">
-                                Group Tip $
-                                <a id="printOutPartyTip"></a>
-                                <br/>
-                                <br/>
-                                Total Bill $
-                                <a id="totalBill"><a>
-                                    </div>
-
-                </div>
-                </p>
-                </form>
+        <div class="card card-block">
+            <h3 class="card-title">
+                Tip Calculator
+            </h3>
+            
+            <form class="billFun">
+                $
+                <span style="font-size: 20px">
+                <input type="text" id="billAmount" placeholder=1 min=1 maxlength=6 /></p>
+            <hr/>
+                </span>
+            <p>Tip
+                <select id="tipChoice">
+                    <option value=5>5%</option>
+                    <option value=10>10%</option>
+                    <option value=15>15%</option>
+                    <option value=20>20%</option>
+                    <option value=25>30%</option>
+                </select>
+                # in party?
+                <input type="number" id="partyCount" value=1 max=20 min=1 />
+            </p>
+            
+            <hr/>
+            <p>Your Tip $<a id="printOutTip"></a>
+                <button type="button" class="btn btn-success" id="tipHit">Let's Tip!</button>
+            </p>
+            <hr/>
+                    
+            <p>You Owe $ <a id="printItOut"></a>
+                <button type="button" class="btn btn-info" id="removal">New bill?</button>
+            <br/>
+            <br/>
+                        
+            <div id="groupParty">
+                Group Tip $<a id="printOutPartyTip"></a>
+            <br/>
+            <br/>
+                Total Bill $ <a id="totalBill"><a>
             </div>
         </div>
-    </div>
-    </div>
-
-
+    </form>
+</div>
 
     <!-- Official JQuery -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
@@ -74,7 +63,5 @@
     <script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>
     <!-- Our project JS -->
     <script src="tip_calculator.js"></script>
-
 </body>
-
 </html>

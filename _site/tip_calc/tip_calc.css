@@ -1,21 +1,58 @@
 .currencyinput {
     border: 1px inset #ccc;
 }
+
 .currencyinput input {
     border: 0;
+    color:white;
+}
+
+#printOutTip {
+    color: white;
+}
+
+#printItOut {
+    color: white;
+}
+
+#printOutPartyTip {
+    color: white;
+}
+
+#totalBill {
+    color: white;
 }
 
 .billFun {
-    color: black;
+    color: white;
     font-size: 17px;
 }
 
+input[type="text"], textarea {
+  background-color : #ff6600; 
+  border: none;
+}
+
+input[type="number"] {
+    background-color : #ff6600; 
+    float: right;
+    border-color: #ff6600;
+}
+
+input::placeholder {
+    color: white;
+}
+
+select{
+    background: #ff6600;
+    border: none;
+}
 
 .card {
     background-color: #ff6600;
     padding: 10px 24px;
-    height: 330px;
-    width: 300px;
+    height: 320px;
+    width: 280px;
     border: 0 none;
     color: white;
     border-radius: 30px;
@@ -36,6 +73,10 @@
     float: right;
 }
 
-#groupParty {
+.group-party {
+    color: white;
+}
+
+#printOutPartyTip {
     color: white;
 }

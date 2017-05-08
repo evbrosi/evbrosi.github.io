@@ -16,15 +16,19 @@ $(function () {
         } else {
             
             }
+
         $("#printOutTip").html(individualTipAmount.toFixed(2));
         $("#printItOut").html(individualBill.toFixed(2));
+        if (partyCount > 1){
         $("#printOutPartyTip").html(tipAmount.toFixed(2));
         $("#totalBill").html(totalBill.toFixed(2));
+        } else {}
 
         console.log(individualBill)
         if(partyCount > 1){
-                $(".card").css("height", "450px");
+            $(".card").css("height", "430px");
         }else {
+            $(".group-party").css("color", "#000000")
         }
         });
     });
