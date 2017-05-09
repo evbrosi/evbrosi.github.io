@@ -1,25 +1,4 @@
-.currencyinput {
-    border: 1px inset #ccc;
-}
-
-.currencyinput input {
-    border: 0;
-    color:white;
-}
-
-#printOutTip {
-    color: white;
-}
-
-#printItOut {
-    color: white;
-}
-
-#printOutPartyTip {
-    color: white;
-}
-
-#totalBill {
+a {
     color: white;
 }
 
@@ -72,12 +51,4 @@ select{
 
 .btn {
     float: right;
-}
-
-.group-party {
-    color: white;
-}
-
-#printOutPartyTip {
-    color: white;
 }
