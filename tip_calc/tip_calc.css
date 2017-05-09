@@ -31,6 +31,7 @@
 input[type="text"], textarea {
   background-color : #ff6600; 
   border: none;
+  width: 90px;
 }
 
 input[type="number"] {

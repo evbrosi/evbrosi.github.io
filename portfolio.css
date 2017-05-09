@@ -109,15 +109,15 @@
     border: 2px solid black;
 }
 
-.btn-ruby:hover {
-    background-color: #14A8CE;
+.btn-babyblue:hover {
+    background-color: #5bc0de;
 }
 
-.btn-js:hover {
+.btn-taxi:hover {
     background-color: #ffdd00;
 }
 
-.btn-pink:hover {
+.btn-halloween:hover {
     background-color: #ff6500;
 }
 
