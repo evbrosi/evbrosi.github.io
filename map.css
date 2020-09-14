@@ -1,0 +1,53 @@
+#map {
+	position: center;
+	height: 300px;
+	background-color: grey;
+	width: 90%;
+}
+
+#cardie {
+	height: 200px;
+	padding: 10px;
+	border-style: black;
+}
+
+#repub {
+	height: 200px;
+	padding: 10px;
+	border-style: black;
+	background-color: red;
+}
+
+.orgsGoHere{
+	color: blue;
+}
+
+#pigPen {
+	color: black;
+	font: 16em;
+	border: black;
+}
+
+#template {
+	height: 270px;
+	padding: 5px;
+	width: 225px;
+	background-color: white;
+}
+
+#lameStuff {
+	font-size: 12px;
+}
+
+#orgCard {
+	height: 280px;
+	padding: 5px;
+}
+
+.cardiffElectric {
+	width: 760px;
+	position: absolute;
+	left: 50%;
+	right: 50%;
+
+}
