@@ -246,7 +246,7 @@ var getThatLatLng2 = function (a) {
   var address = a[3];
   var totalAddress = address + "%2022801";
 
-    var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" +totalAddress + "&key=AIzaSyAyStvYC97ySEJDh3ow1_LPsdBCDjfrbtI";
+    var googleUrl = "https://maps.googleapis.com/maps/api/geocode/json?address=" +totalAddress + "&key";
     $.ajax(googleUrl).done(function (data) {
         var latitude = data.results[0].geometry.location.lat;
         pushToPerson(latitude);
