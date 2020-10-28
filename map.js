@@ -228,6 +228,18 @@ function voterOutComePredict2020(a) {
     var div = document.getElementById("predictedVoters");
     div.innerHTML = (probableVoters).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
+    var div = document.getElementById("votesToBeCast");
+    div.innerHTML = (probableVoters-(earlyVoters[0] +earlyVoters[1] +earlyVoters[2])).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+   var div = document.getElementById("votesAlreadyCast");
+    div.innerHTML = (earlyVoters[0] +earlyVoters[1] +earlyVoters[2]).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      var percentVotersVoting = (((earlyVoters[0] +earlyVoters[1] +earlyVoters[2])/probableVoters) * 100);
+
+   var div = document.getElementById("percentAlreadyCast");
+    div.innerHTML = (percentVotersVoting).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+
       probablePartyVotes(leftOverVoters);
 
 }
@@ -246,6 +258,18 @@ function probablePartyVotes(a){
     let badRepublicanBidenVoters = earlyVoters[1] * .04;
 
     let badDemocratTrumpVoters = earlyVoters[0] * .05;
+
+    var div = document.getElementById("probableBiden1");
+    div.innerHTML = (demVotesMinusBadDemocrats + indieVoterWhoVoteBiden + badRepublicanBidenVoters).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+    var div = document.getElementById("probableTrump1");
+    div.innerHTML = (repVotesMinusBadRepublicans + indieVoterWhoVoteTrump + badDemocratTrumpVoters).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
+      let probDifference = (demVotesMinusBadDemocrats + indieVoterWhoVoteBiden + badRepublicanBidenVoters) - (repVotesMinusBadRepublicans + indieVoterWhoVoteTrump + badDemocratTrumpVoters);
+
+    var div = document.getElementById("probableVoteDif");
+    div.innerHTML = Math.abs(probDifference).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+
 
     let percentDem16 = outcome16[0] / (outcome16[0] + outcome16[1] + outcome16[2]);
 
@@ -270,8 +294,8 @@ function probablePartyVotes(a){
         var div = document.getElementById("trumpPredict");
     div.innerHTML = (probableTrumpVotes).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
-        var div = document.getElementById("3partyPredict");
-    div.innerHTML = (a).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+       //var div = document.getElementById("3partyPredict");
+   // div.innerHTML = (a).toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
       if (probableTrumpVotes > probableBidenVotes) {
         var div = document.getElementById("whoWillWin");
