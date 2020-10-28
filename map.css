@@ -1,53 +1,28 @@
-#map {
-	position: center;
-	height: 300px;
-	background-color: grey;
-	width: 90%;
+#space {
+	padding: 20px;
 }
 
-#cardie {
-	height: 200px;
-	padding: 10px;
-	border-style: black;
+#predictionSpace {
+	padding: 3px;
 }
 
-#repub {
-	height: 200px;
-	padding: 10px;
-	border-style: black;
-	background-color: red;
+#green-bleh {
+	background-color: #90ee90;
 }
 
-.orgsGoHere{
-	color: blue;
+#taxi-yellow {
+		background-color: #F7F749;
 }
 
-#pigPen {
-	color: black;
-	font: 16em;
-	border: black;
+#big-pink {
+		background-color: #FFBCD9;
 }
 
-#template {
-	height: 270px;
-	padding: 5px;
-	width: 225px;
-	background-color: white;
+#teal {
+		background-color: #A8FFF8;
 }
 
-#lameStuff {
-	font-size: 12px;
+#candy-apple {
+		background-color: #ffc87c;
 }
 
-#orgCard {
-	height: 280px;
-	padding: 5px;
-}
-
-.cardiffElectric {
-	width: 760px;
-	position: absolute;
-	left: 50%;
-	right: 50%;
-
-}
