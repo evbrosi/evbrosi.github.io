@@ -86,7 +86,7 @@ function statusCheck(){
     } else {
       alert();
     }
-    
+    changeColors();
     firstStart();
 }
 
@@ -102,6 +102,7 @@ function arizona(){
 function firstStart(){
   //fix Date      
   printState();
+
 
   var div = document.getElementById('date');
     div.innerHTML = earlyVoters[3];
@@ -418,3 +419,23 @@ function configStateCount(){
 }
 }
 
+var colorsChanged = true;
+
+function changeColors() {
+  if (colorsChanged == true) {
+    colorsChanged = false;
+     $("#green-bleh").css("background-color", "#F7F749");
+     $("#candy-apple").css("background-color", "#FFBCD9");
+     $("#big-pink").css("background-color", "#A8FFF8");
+     $("#teal").css("background-color", "#ffc87c");
+     $("#taxi-yellow").css("background-color", "#90ee90");
+  } else {
+    colorsChanged = true;
+ 
+  $("#green-bleh").css("background-color", "#90ee90");
+  $("#candy-apple").css("background-color", "#ffc87c");
+  $("#taxi-yellow").css("background-color", "#F7F749");
+  $("#big-pink").css("background-color", "#FFBCD9");
+  $("#teal").css("background-color", "#A8FFF8");
+  }
+}
