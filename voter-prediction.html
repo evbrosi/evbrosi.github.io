@@ -1,324 +1,107 @@
 <!DOCTYPE html>
 <html>
-  <head>
-      <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.css">
-      <link rel="stylesheet" href="map.css">
+<head>
+  <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="map.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-  </head>
-  <body  onload="arizona()">
-  	 <script src= map.js></script>
+</head>
+<body onload="start()">
 
-<div id= "space">
 
- <div class="container"> 
-        <div class="row"> 
-            <div class="col-lg-6 mb-4"> 
-                <div class="card" id="green-bleh"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Pick a Swing State
-  
-<select name="status" id="status">
-  <option value="az">Arizona</option>
-  <option value="ge">Georgia</option>
-  <option value="fl">Florida</option>
-  <option value="mi">Michigan</option>
-  <option value="mn">Minnesota</option>
-  <option value="nc">North Carolina</option>
-  <option value="oh">Ohio</option>
-  <option value="pa">Pennsylvania</option>
-  <option value="tx">Texas</option>
-  <option value="wi">Wisconsin</option>
-</select> 
-<button id="fortyNine" class="btn btn-success btn-small" onclick="statusCheck()">Go </button>
-</h5> 
-                        <p class="card-text"> 
+    <div id= "space">
 
- <a id="text"> </a> </br>
-  <a id="registered_predictions"> </a>
+       <div class="container"> 
+        <div class="col-lg-14 mb-4"> 
+            <div class="card" id="green-bleh"> 
+                <img class="card-img-top" src="" alt=""> 
 
-                        
-                    </div> 
+                <div class="card-body"> 
+                    <h1 class="card-title">   
+                        <select name="status" id="status" onchange="statusCheck()">
+                          <option value="az">Arizona</option>
+                          <option value="ge">Georgia</option>
+                          <option value="fl">Florida</option>
+                          <option value="mi">Michigan</option>
+                          <option value="mn">Minnesota</option>
+                          <option value="nc">North Carolina</option>
+                          <option value="oh">Ohio</option>
+                          <option value="pa">Pennsylvania</option>
+                          <option value="tx">Texas</option>
+                          <option value="wi">Wisconsin</option>
+                      </select> 
+                  </h1><h5>
+                      <a id="specialMessage"></a></h5>
+                      
+                      <p class="card-text">    
+                    </p> 
                 </div> 
             </div> 
-            <div class="col-lg-6 mb-4"> 
-                <div class="card" id="taxi-yellow"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title"><a id="state"></a>'s Early Voting Data</h5> 
-                        <a class="card-text"> 
-                            	   <a id ="registeredVoters"></a> : Is the number of registered voters.</br>
-       <a id="totalVotes"></a> :Is the number of people who have already voted.</br>
-       <a id="edrv"></a> :Registered Democrats who have voted early. </br>  
-       <a id="errv"></a> :Registered Republican who have voted early. </br>
-   	   <a id="eirv"></a> :Registered Third Party who have voted early.</br>
-   	   <a id="date"></a> :Last upload date.
-                    
-                          </a>
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
-        </div> 
-
-
-            <div class="col-lg-14 mb-4"> 
+        </div>
+   
+    <div class="row"> 
+            <div class="col-lg-4 mb-4"> 
                 <div class="card" id="candy-apple"> 
                     <img class="card-img-top" src="" alt=""> 
   
                     <div class="card-body"> 
-                        <h5 class="card-title">How does this work: </h5> 
-                        <p class="card-text">
-                        	In 2016, 5% of registered democrats voted for Trump, 4% of registered republicans voted for Clinton. Trump won 44% of the registered third-party voters, while Clinton received 42%.
-                        	</br>So we can actually make formulas:
-							</br>Probable Biden Votes = registered Democrat Early Voters - (5% of Registered Democrat Early Voters) + 4% of registered Republican Early Voters + 42% registered Independent Early Voters.
-							</br></br>
-							Probable Trump Votes = registered Republican Early Voters - (4% of Registered Republican Early Voters) + 4% of registered Democrat Early Voters + 43% registered Independent Early Voters.
-							</br></br>
-
-							In this instance, probable Biden votes = <a id="probableBiden1"></a></br>
-							In this instance, probably Trump votes = <a id="probableTrump1"></a></br>
-							Which means the lead is more likely at <a id ="probableVoteDif"><a>.
-							</br></br>					
-
-                        	In 2016, there were <a id ="register2016"></a> registered voters but only <a id="16voters"></a> voted!</br>
-                        	Right now, there are   <a id ="registeredVoters2"></a> registered voters but I'm predicting only <a id="predictedVoters"></a> will vote!  </br>
-                        	</br>
-                        	Which means there's still probably <a id="votesToBeCast"></a> votes yet to be cast.</br>
-                        	With <a id="percentAlreadyCast"></a>% of the probable total vote or <a id="votesAlreadyCast"></a> votes already recieved.
-
- 								<a id="text"> </a>
-
-                        </p> 
-                    </div> 
+                        <h5 class="card-title">Early Voting by Political Party</h5> 
+                        <p class="card-text"> 
+                                   <div class="row"> 
+                        <div id="donutchart" style="width: 900px; height: 200px;"></div>
+                        </div> 
                 </div> 
             </div>
-
-        <div class="row"> 
-            <div class="col-lg-6 mb-4"> 
-                <div class="card" id="big-pink"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">2016 Election Data for <a id="state2"></a></h5> 
-                        <p class="card-text"> 
-                        	<a id ="whoWonIn16"></a> won by <a id="16Spread"></a> votes!</br>
-       <a id="Clinton16"></a> :votes for Hillary Clinton</br>
-       <a id="trump16"></a> :votes for Donald Trump </br>  
-       <a id="3party16"></a> :votes for Third-Party candidates </br></br></br>
-   	   
-
- 								<a id="text"> </a>
-
-                        </p> 
-                    </div> 
-                </div> 
-            </div> 
-            <div class="col-lg-6 mb-4"> 
-                <div class="card" id="teal"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">2020 Predictions <a id="state3"></a></h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="whoWillWin"></a> will win by <a id="predictionSpread"></a> votes!</h6>
-       <a id="bidenPredict"></a> votes for Biden</br>
-       <a id="trumpPredict"></a> votes for Trump </br>  
-       who cares votes for Third-Party </br>
-   	   </br>
-                        </p> 
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
         </div>
+                        <div class="col-lg-4 mb-4"> 
+                <div class="card" id="candy-apple"> 
+                    <img class="card-img-top" src="" alt=""> 
   
+                    <div class="card-body"> 
+                        <h5 class="card-title">Early Voting vs Registered Voters</h5> 
+                        <p class="card-text"> 
+                                   <div class="row"> 
+
+                        <div id="donutchart1" style="width: 900px; height: 200px;"></div>
+                        </div> 
+                </div> 
+            </div>
+        </div>
+                                <div class="col-lg-4 mb-4"> 
+                <div class="card" id="candy-apple"> 
+                    <img class="card-img-top" src="" alt=""> 
+  
+                    <div class="card-body"> 
+                        <h5 class="card-title">2016 Results</h5> 
+                        <p class="card-text"> 
+                                   <div class="row"> 
+                        <div id="result16" style="width: 900px; height: 200px;">
+                            </p>
+                        </div>
+                        </div> 
+                </div> 
+            </div>
+        </div>
+    </div>
  
-            <div class="col-lg-14 mb-4"> 
-                <div class="card" id="candy-apple"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title"></h5> 
-                        <p class="card-text"> 
-                            	   <div class="row"> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="arizona" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Arizona</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="azWinner"></a> by <a id="azSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="florida" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Florida</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="flWinner"></a> by <a id="flSpread"></a>!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="georgia" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Georgia</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="gaWinner"></a> by <a id="gaSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="michigan" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Michigan</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="miWinner"></a> by <a id="miSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>        
-        </div>                            	   
-        <div class="row"> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="minnesota" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Minnesota</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="mnWinner"></a> by <a id="mnSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-                        <div class="col-lg-3 mb-4"> 
-                <div class="card" id="north-carolina" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">North Carolina</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="ncWinner"></a> by <a id="ncSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="ohio" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Ohio</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="ohWinner"></a> by <a id="ohSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="pennsylvania" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Pennsylvania</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="paWinner"></a> by <a id="paSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>         
-        </div>                            	   
-        <div class="row"> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="texas" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Texas</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="txWinner"></a> by <a id="txSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
-            <div class="col-lg-3 mb-4"> 
-                <div class="card" id="wisconsin" style="display:none"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Wisconsin</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="wiWinner"></a> by <a id="wiSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-      <div class="col-lg-6 mb-4"> 
-                <div class="card" id="teal"> 
-                    <img class="card-img-top" src="" alt=""> 
-  
-                    <div class="card-body"> 
-                        <h5 class="card-title">Click on other states to learn more</h5> 
-                        <p class="card-text"> 
-                            	   <h6><a id ="wiWinner"></a> by <a id="wiSpread">!
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div>
-        </div>
-                        </p> 
-                          
-                       
-                            <i class="far fa-heart"></i></a> 
-                    </div> 
-                </div> 
-            </div> 
-        </div>     
-    </div> 
- </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                    <h5 class="card-title">Early Voting over Time </h5>   
+                            <div id="curve_chart" style="width: 900px; height: 500px"></div>
+              
+   
+</div>
 
 
-  </body>
-</html>
+        
+
+
+
+
+
+
+                <script src="map.js"></script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+            </body>
+            </html>
