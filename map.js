@@ -70,6 +70,8 @@ var independents = [];
 
 var registeredVoters;
 
+var state;
+
 var resultsIn2016= [];
 
 function start(){
@@ -78,6 +80,7 @@ function start(){
   republicans = azRepublicans;
   independents = azIndependents;
   registeredVoters = azRegisteredVoters;
+  state = "Arizona";
   drawChart1();
   drawChart2();
   drawChart3();
@@ -181,6 +184,10 @@ function specialMessage() {
 
   var div = document.getElementById('specialMessage');
     div.innerHTML = specialMessage;
+      var div = document.getElementById('state1');
+    div.innerHTML = state;
+      var div = document.getElementById('state2');
+    div.innerHTML = state;
 
 }
 
