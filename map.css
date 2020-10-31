@@ -1,13 +1,21 @@
 #space {
-	padding: 20px;
+	padding-top: 20px;
 }
 
 #predictionSpace {
-	padding: 3px;
+
+}
+
+body{
+
 }
 
 #green-bleh {
-	background-color: #90ee90;
+	background-color: #DC5AD7;
+}
+
+#status {
+	background-color: #DC5AD7;
 }
 
 #taxi-yellow {
@@ -23,6 +31,6 @@
 }
 
 #candy-apple {
-		background-color: #ffc87c;
+		background-color: #DC5AD7;
 }
 
