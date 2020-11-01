@@ -92,9 +92,9 @@ function drawChart1() {
 
   var data = google.visualization.arrayToDataTable([
     ['Political Party', 'Early Voters'],
-    ['Democrats',     democrats[democrats.length - 1]],
-    ['Republicans',      republicans[republicans.length-1]],
-    ['Third-Party',  independents[independents.length-1]],
+    ['Registered Democrats',     democrats[democrats.length - 1]],
+    ['Registered Republicans',      republicans[republicans.length-1]],
+    ['Registered Third-Party',  independents[independents.length-1]],
     ]);
 
   var options = {
@@ -180,7 +180,7 @@ function specialMessage() {
     if (democrats[democrats.length-1] < republicans[republicans.length-1]) {
       var specialMessage = leadBy + " more votes from registered Republicans than registered Democrats.";
     } else {
-          var specialMessage = leadBy + " more votes from registered Democrats than registered Democrats.";
+          var specialMessage = leadBy + " more votes from registered Democrats than registered Republicans.";
         }
 
   var div = document.getElementById('specialMessage');
