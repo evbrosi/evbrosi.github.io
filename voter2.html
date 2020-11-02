@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="bootstrap-4.5.2-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="earlyVoting.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+</head>
+<body onload="drawChart()">
+
+
+  <div id= "space">
+       <div id="curve_chart"></div></br>
+
+   <div class="container"> 
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+<h1 class="card-title"> Polls close at 7pm <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt7()"> +/- </button></h1>
+            </br>
+<div id="7pm" style="display:none">
+       <div class="row">
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Toss Ups!</h5> 
+              <p class="card-text"> 
+              <button id="ga" class="btn btn-warning btn-lrg" value=16 onclick="statusCheck(this.id, this.value)">Georgia 16 </button>
+            </br>
+                Georgia has been counting early votes.
+                            </br>
+                Georgia does not accept votes post marked after Nov. 3.
+              </br> <button id="va" class="btn btn-primary btn-lrg" value=13 onclick="statusCheck(this.id, this.value)">Virginia 13 </button>
+              </div> 
+            </div> 
+          </div>
+          <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden7></a> electorial college votes.</h5>
+            </br>        <button id="democrat" class="btn btn-primary btn-lrg" value=3 disabled>Vermont 3 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump7></a> electorial college votes.</h5> </br>       <button id="republican" class="btn btn-danger btn-lrg" value=11 disabled>Indiana 11 </button>
+        <button id="republican" class="btn btn-danger btn-lrg" value=9 disabled>South Carolina 9 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+                             
+</div> 
+
+              
+
+ 
+
+              
+          
+</div>
+</div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+<h1 class="card-title"> Polls close at 7:30 pm  <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt()"> +/- </button></h1>
+            </br>
+<div id="730pm" style="display:none">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Toss Ups!</h5> 
+              <p class="card-text"> 
+              <button id="nc" class="btn btn-warning btn-lrg" value=15 onclick="statusCheck(this.id, this.value)">North Carolina 15 </button>
+            </br>
+                North Carolina has been counting early votes.
+                            </br>
+                 North Carolina keeps counting until Nov. 12.
+              </br>
+                <button id="oh" class="btn btn-warning btn-lrg" value=18 onclick="statusCheck(this.id, this.value)">Ohio 18</button>
+            </br>
+                Ohio has been counting early votes.
+                            </br>
+                Ohio has an insane law that say it can only report election results on election night and when all votes are counted (not before Nov. 14th- not after Nov. 18th)
+              </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden7half></a> electorial college votes.</h5> 
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump7half></a> electorial college votes.</h5> 
+            </br>      <button id="republican" class="btn btn-primary btn-lrg" value=13 disabled>West Virginia 5 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+        </div> 
+
+        </div>
+
+        </div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+<h1 class="card-title"> Polls close at 8:00 pm <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt8()"> +/- </button></h1>
+            </br>
+<div id="8pm" style="display:none">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Toss Ups!</h5> 
+              <p class="card-text"> 
+              <button id="pa" class="btn btn-warning btn-lrg" value=20 onclick="statusCheck(this.id, this.value)">Pennsylvania 20 </button>
+            </br>
+                  Pennsylvania is a mess.
+                            </br>
+              </br>
+              <button id="fl" class="btn btn-warning btn-lrg" value=29 onclick="statusCheck(this.id, this.value)">Florida 29 </button>
+
+            </br>
+                Florida has been counting early votes.
+                            </br>
+                They probably going to have a winner by 10pm.
+              </br>
+              <button id="me" class="btn btn-danger btn-lrg" value=1 onclick="statusCheck(this.id, this.value)">Maine's 2nd 1 </button>
+                    <button id="nh" class="btn btn-primary btn-lrg" value=4 onclick="statusCheck(this.id, this.value)">New Hampshire 4 </button>
+              </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden8></a> electorial college votes.</h5></br>
+                    <button id="democrat" class="btn btn-primary btn-lrg" value=3 disabled>DC 3 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=3 disabled="">Delaware 3 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=10 disabled="">Maryland 10 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=11 disabled="">Massachusetts 11 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=4 disabled="">Rhode Island 4 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=7 disabled="">Connecticut 7 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=20 disabled="">Illinois 20 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=14 disabled="">New Jersey 14 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" value=2 disabled="">Maine 1st 2 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump8></a> electorial college votes.</h5></br>
+                    <button id="republican" class="btn btn-danger btn-lrg" disabled>Mississippi 6 </button>
+      <button id="republican" class="btn btn-danger btn-lrg" disabled>Missouri 10 </button>
+      <button id="republican" class="btn btn-danger btn-lrg" disabled>Tennessee 11 </button>
+        <button id="republican" class="btn btn-danger btn-lrg" disabled>Alabama 9 </button>
+      <button id="republican" class="btn btn-danger btn-lrg" disabled>Oklahoma 7 </button> 
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+        </div> 
+
+        
+
+      
+        </div>
+</div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+
+<h1 class="card-title"> Polls close at 8:30 pm  <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt830()"> +/- </button></h1>
+            </br>
+<div id="830pm">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <p class="card-text"> 
+                Arkansas is the only state that reports at 8:30pm. But anyway- I hope you're doing okay. I hope this night isn't too crazy.
+            </br>
+                
+              </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden8half></a> electorial college votes.</h5> 
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump8half></a> electorial college votes.</h5> </br>
+              <button id="republican" class="btn btn-primary btn-lrg" disabled>Arkansas 6 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+        </div> 
+      
+        </div>
+
+</div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+
+<h1 class="card-title"> Polls close at 9:00 pm  <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt9()"> +/- </button></h1>
+            </br>
+<div id="9pm" style="display:none">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> <h5 class="card-title">Toss Ups!</h5> 
+              <p class="card-text"> 
+              <button id="mi" class="btn btn-warning btn-lrg" value=16 onclick="statusCheck(this.id, this.value)">Michigan 16 </button>
+            </br>
+                  Michigan starts counting early votes on Nov. 2nd. 
+                            </br>
+                  But they'll saying they'll know on Nov. 6th. You won't know on eleciton day.
+              </br>
+                <button id="mn" class="btn btn-warning btn-lrg" value=10 onclick="statusCheck(this.id, this.value)">Minnesota 10 </button>
+            </br>
+                Minnesota has been counting early votes.
+                            </br>
+                Minnesota counts everything until Nov. 10th- there was a supreme court case about it- at the time I'm making this I don't know the outcome.
+              </br>
+                <button id="wi" class="btn btn-warning btn-lrg" value=10 onclick="statusCheck(this.id, this.value)">Wisconsin 10 </button>
+            </br>
+                  Wisconsin doesn't count early votes... 
+                            </br>
+                  But they say they'll have an official tally on Wednesday Nov. 4th.
+              </br>
+                <button id="az" class="btn btn-warning btn-lrg" value=11 onclick="statusCheck(this.id, this.value)">Arizona 11 </button>
+            </br>
+                Arizona does count early votes weeks before the election.
+                            </br>
+                Arizona has an insane law that says they can't announce results until an hour after polls close. So at 10pm you'll probably know almost all their numbers (they could just slap a winner on it immediately at 10pm).
+                </br>
+                <button id="tx" class="btn btn-warning btn-lrg" value=38 onclick="statusCheck(this.id, this.value)">Texas 38 </button>
+            </br>
+                Texas does count early votes before the election.
+                            </br>
+               Texas only accepts ballots postmarked by Nov. 3rd.
+              </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden9></a> electorial college votes.</h5></br>
+                    <button id="democrat" class="btn btn-primary btn-lrg" value=29 disabled>New York 29 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" disabled>New Mexico 5 </button>
+      <button id="democrat" class="btn btn-primary btn-lrg" disabled>Colorado 9 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump9></a> electorial college votes.</h5> 
+            </br>
+                  <button id="republican" class="btn btn-primary btn-lrg" disabled>South Dakota 3 </button>
+      <button id="republican" class="btn btn-primary btn-lrg" disabled>Nebraska 4 </button>
+      <button id="republican" class="btn btn-primary btn-lrg" disabled>Louisiana 8 </button>
+      <button id="republican" class="btn btn-primary btn-lrg" disabled>Kansas 6 </button>
+      <button id="republican" class="btn btn-primary btn-lrg" disabled>North Dakota 3 </button>
+      <button id="republican" class="btn btn-primary btn-lrg" disabled>Wyoming 3 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+        </div> 
+
+        </div>
+        </div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+
+<h1 class="card-title"> Polls close at 10:00 pm  <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt10()"> +/- </button></h1>
+            </br>
+<div id="10pm" style="display:none">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+            <div class="card-body"> <h5 class="card-title">Toss Ups!</h5> 
+              <p class="card-text"> 
+                  
+      <button id="io" class="btn btn-danger btn-lrg" value=6 onclick="statusCheck(this.id, this.value)">Iowa 6 </button>
+
+
+      <button id="nv" class="btn btn-primary btn-lrg" value=6 onclick="statusCheck(this.id, this.value)">Nevada 6 </button>
+
+
+            </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden10></a> electorial college votes.</h5> 
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump10></a> electorial college votes.</h5> 
+            </br>      <button id="republican" class="btn btn-primary btn-lrg" disabled>Utah 6 </button>
+                  <button id="republican" class="btn btn-primary btn-lrg" disabled>Montana 3 </button>
+              </div> 
+            </div> 
+          </div>
+        </div> 
+
+        </div>
+
+        </div>
+</div>
+
+    <div class="col-lg-14 mb-4"> 
+      <div class="card" > 
+        <img class="card-img-top" src="" alt=""> 
+                            <div class="card-body"> 
+<h1 class="card-title"> Polls close at 11:00 pm <button id="seeMore" style="float:right" class="btn btn-success btn-lrg" value=15 onclick="displayIt11()"> +/- </button></h1>
+            </br>
+<div id="11pm" style="display:none">
+<div class="row"> 
+        <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Toss Ups!</h5> 
+              
+              <p class="card-text"> 
+              If you're reading this- you've made it to the end of the election. It's just Hawaii and Alaska left. There will be no surprises there. Hopefully the election is solved by then.
+              </div> 
+            </div> 
+          </div>
+<div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Biden with <a id=biden11></a> electorial college votes.</h5></br>
+                    <button id="democrat" class="btn btn-primary btn-lrg" disabled>California 55 </button>
+              <button id="democrat" class="btn btn-primary btn-lrg" disabled>Washington 12 </button>
+              <button id="democrat" class="btn btn-primary btn-lrg" disabled>Oregon 7 </button>
+              
+              </div> 
+            </div> 
+          </div>
+       <div class="col-lg-4 mb-4"> 
+          <div class="card"> 
+            <img class="card-img-top" src="" alt=""> 
+
+            <div class="card-body"> 
+              <h5 class="card-title">Trump with <a id=trump11></a> electorial college votes.</h5></br>
+                    <button id="republican" class="btn btn-primary btn-lrg" disabled>Idaho 4 </button>
+              <p class="card-text"> 
+              
+              </div> 
+            </div> 
+          </div>
+        </div> 
+
+        
+
+      
+        </div>
+</div>
+</div>
+
+  <script src="earlyVoting.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
+
+</body>
+</html>
