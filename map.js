@@ -99,7 +99,6 @@ function drawChart1() {
 
   var options = {
     pieHole: 0.4,
-    backgroundColor: "#DC5AD7",
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
@@ -119,7 +118,6 @@ function drawChart2() {
   var options = {
     pieHole: 0.4,
     colors: ['#FFaaDd', '#FF8000'],
-    backgroundColor: "#DC5AD7",
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('donutchart1'));
@@ -165,7 +163,6 @@ function results2016Chart() {
 
   var options = {
     pieHole: 0.4,
-    backgroundColor: "#DC5AD7",
   };
 
   var chart = new google.visualization.PieChart(document.getElementById('result16'));
